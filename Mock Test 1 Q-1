@@ -1,0 +1,19 @@
+## Function to move zeros
+def move_zeros(arr):
+    if ((len(arr)>=1) and (len(arr)<=10**4)):
+        size = len(arr)
+        left = right = 0
+        while right < size:
+            if arr[right] == 0:
+                right += 1
+            else:
+                arr[left], arr[right] = arr[right], arr[left]
+                right += 1
+                left += 1
+        return arr
+    else:
+        return -1
+
+## Driver Code
+arr = [0,1,0,3,12]
+print(move_zeros(arr))
